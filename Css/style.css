@@ -1,0 +1,391 @@
+/* color palette */
+:root {
+    --mainBlue: #246EB9;
+    --mainYellow: #FABC3C;
+    --mainBlack: #090808;
+    --mainWhite: #fcefef;
+    --mainOrange: #F25B2A;
+    --mainRed: #DE3E32;
+    --mainMagenta: #861388;
+    --mainGreen: #54D96A;
+    --mainClaret: #931E38;
+    --mainClaretTransparent: rgba(147, 30, 56, .7)
+}
+
+@font-face {
+    font-family: 'Gran-Payeh';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../fonts/Digi-Gran-Payeh-Bold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'aviny';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../fonts/avinyWeb.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'iranSans';
+    src: url("../fonts/IRANSansWeb.woff") format(woff);
+}
+
+body {
+    font-family: 'aviny', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    overflow: hidden !important;
+}
+
+
+a {
+    text-decoration: none;
+
+
+}
+
+/* preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color: var(--mainWhite);
+
+}
+
+.hide-preloader {
+    display: none !important;
+}
+
+.container-game {
+    background-image: url(../images/pic-bg.jpg);
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    animation-name: zoom;
+    animation-duration: 200s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+    position: relative;
+    z-index: 0;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1) translateX(-2%)
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.container-game::before {
+    background: linear-gradient(to right, rgba(4, 14, 39, 0.3)0%,
+            rgba(4, 14, 39, .7) 100%);
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.cont {
+    position: relative;
+    z-index: 10 !important;
+}
+
+
+
+
+/* header */
+/* burger menu */
+#burger-menu {
+    cursor: pointer;
+    height: 27px;
+    width: 27px;
+    overflow: visible;
+    position: relative;
+    z-index: 2;
+    transition: .5s;
+}
+#burger-menu:hover{
+    transform: scale(1.2);
+    
+}
+
+#burger-menu span,
+#burger-menu span:after,
+#burger-menu span:before {
+    background-color: var(--mainYellow);
+    height: 4px;
+    display: block;
+    opacity: 1;
+    position: absolute;
+    transition: .3s ease-in-out;
+    box-shadow: 0px 0px 8px 1px var(--mainBlack);
+}
+#burger-menu span:after,
+#burger-menu span:before {
+    content: '';
+}
+
+#burger-menu span {
+    right: 0;
+    top: 13px;
+    width: 27px;
+}
+
+#burger-menu span:before {
+    left: 0;
+    top: -10px;
+    width: 16px;
+}
+
+#burger-menu span:after {
+    left: 0;
+    top: 10px;
+    width: 20px;
+}
+
+#burger-menu.close span {
+    transform: rotate(-45deg);
+    top: 13px;
+    width: 27px;
+}
+
+#burger-menu.close span:before {
+    top: 0;
+    transform: rotate(90deg);
+    width: 27px;
+}
+
+#burger-menu.close span:after {
+    top: 0;
+    left: 0;
+    transform: rotate(90deg);
+    opacity: 0;
+    width: 0;
+}
+
+#menu {
+    z-index: 1;
+    position: absolute;
+    left: 12px;
+    top: 0;
+    
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    
+    transition: all 0.3s ease-in-out;
+    
+    
+}
+
+#menu.overlay {
+    visibility: visible;
+    opacity: 1;
+    padding-top: 100px;
+    
+}
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+#menu li {
+    margin: 10px 0;
+    list-style: none;
+}
+
+#menu a {
+    color: var(--mainWhite);
+    display: inline;
+    font-size:40px;
+    transition: .3s;
+    padding: 0;
+}
+.icon-menu{
+    transition: .5s;
+}
+#menu a:hover .icon-menu{
+    color: var(--mainYellow);
+    transform: translateX(5px);
+}
+/* end header */
+/* main */
+main {
+    min-height: 100%;
+}
+
+.title {
+    font-family: 'aviny';
+    font-size: 60px;
+    color: var(--mainBlack);
+}
+
+.title-letter {
+    background-color: var(--mainWhite);
+    opacity: 1;
+    width: 20% !important;
+    color: var(--mainClaret);
+    padding: 5px 10px;
+    margin: 0 3px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px var(--mainBlack);
+
+}
+
+.title-letter:nth-child(1),
+.title-letter:nth-child(4) {
+    animation: rotation 5s infinite;
+}
+
+@keyframes rotation {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(20deg);
+    }
+
+    50% {
+        /* transform: rotate(0deg); */
+    }
+
+    75% {
+        transform: rotate(-20deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+
+.letter-box {
+    font-size: 40px;
+    color: var(--mainBlack);
+}
+.letter{
+    background-color: var(--mainWhite);
+        opacity: 1;
+        width: 20% !important;
+        color: var(--mainClaret);
+        padding: 5px 20px;
+        margin: 0 3px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 8px var(--mainBlack);
+}
+
+.text-area {
+    font-size: 25px;
+    background-color: var(--mainWhite);
+    opacity: .6;
+    outline: none;
+    border: none;
+    transition: .3s;
+    box-shadow: 0px 0px 8px var(--mainBlack);
+}
+
+.text-area::placeholder {
+    color: var(--mainClaret);
+
+}
+
+.text-area:focus {
+    background-color: var(--mainWhite);
+    box-shadow: 0px 0px 8px var(--mainBlack);
+    outline: none;
+    border: none;
+}
+
+.start-btn {
+    padding: 5px 60px;
+    font-size: 30px;
+    outline: 0;
+    border: 0;
+    transition: .4s;
+    background-color: var(--mainYellow);
+    color: var(--mainBlack);
+    box-shadow: 0px 0px 8px 1px var(--mainBlack);
+    z-index: 2;
+}
+
+.start-btn:hover {
+    scale: 1.1;
+    background-color: var(--mainRed);
+    color: var(--mainWhite);
+    box-shadow: 0px 0px 8px var(--mainBlack);
+
+}
+
+
+.start-btn:active {
+    background-color: var(--mainYellow) !important;
+    color: var(--mainBlack) !important;
+}
+
+/* end main */
+
+/* keyBoard */
+.keyboard {
+    direction: ltr;
+}
+
+.keyboard-btn {
+    text-align: center;
+    width: 38px;
+    height: 28px;
+    margin: 3px 0;
+    font-size: 16px;
+    padding: 0;
+    background-color: var(--mainClaret);
+    opacity: .8;
+    box-shadow: 0px 0px 8px var(--mainBlack);
+
+    border: 0;
+    color: var(--mainWhite);
+    transition: .3s;
+}
+
+.keyboard-btn:hover {
+    background-color: var(--mainClaret);
+    color: var(--mainWhite);
+    scale: 1.2;
+    font-size: 20px;
+    opacity: 1;
+
+}
+
+.delete-btn {
+    width: 80px;
+    font-weight: 600;
+}
+
+/* end keyBoard */
+/* footer */
+.footer{
+    /* background-color: #246EB9; */
+}
+.message{
+    font-size: 36px;
+    color: #fff;
+    text-shadow: 0 0 8px var(--mainBlack);
+}
+/* end footer */
