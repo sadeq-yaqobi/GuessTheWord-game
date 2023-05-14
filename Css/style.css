@@ -11,39 +11,20 @@
     --mainClaret: #931E38;
     --mainClaretTransparent: rgba(147, 30, 56, .7)
 }
-
-@font-face {
-    font-family: 'Gran-Payeh';
-    font-style: normal;
-    font-weight: normal;
-    src: url(../fonts/Digi-Gran-Payeh-Bold.woff) format('woff');
-}
-
 @font-face {
     font-family: 'aviny';
     font-style: normal;
     font-weight: normal;
     src: url(../fonts/avinyWeb.woff) format('woff');
 }
-
-@font-face {
-    font-family: 'iranSans';
-    src: url("../fonts/IRANSansWeb.woff") format(woff);
-}
-
 body {
     font-family: 'aviny', Tahoma, Geneva, Verdana, sans-serif;
     direction: rtl;
     overflow: hidden !important;
 }
-
-
 a {
     text-decoration: none;
-
-
 }
-
 /* preloader */
 .preloader {
     position: fixed;
