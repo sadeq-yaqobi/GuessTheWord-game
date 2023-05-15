@@ -1,28 +1,38 @@
 // keyBoard
 let textArea = document.querySelector(".text-area");
+
+// Function to append text to the text area
 function typeText(txt) {
   textArea.value += txt;
 }
+
+// Function to delete the last character from the text area
 function deleteText() {
   textArea.value = textArea.value.slice(0, -1);
 }
 // end keyBoard
+
 // preloader
 window.addEventListener("load", preloader);
+
+// Function to hide the preloader when the window is loaded
 function preloader() {
   let preloaderBox = document.querySelector(".preloader");
   preloaderBox.classList.add("hide-preloader");
 }
 // end preloader
+
 // burger menu
 const burgerMenu = document.getElementById("burger-menu");
 const overlay = document.getElementById("menu");
+
+// Toggle the burger menu and overlay when the burger menu is clicked
 burgerMenu.addEventListener("click", function () {
   this.classList.toggle("close");
   overlay.classList.toggle("overlay");
 });
-
 // end burger menu
+
 const message = document.querySelector(".message");
 const guessInput = document.querySelector(".text-area");
 const button = document.querySelector(".start-btn");
@@ -33,7 +43,9 @@ const letter1 = document.querySelector(".letter1");
 const letter2 = document.querySelector(".letter2");
 const letter3 = document.querySelector(".letter3");
 const letter4 = document.querySelector(".letter4");
+
 const myArray = [
+  // An array of words
   "لیمو",
   "پنیر",
   "سفید",
@@ -160,12 +172,15 @@ const myArray = [
   "تمام",
   "زرنگ",
 ];
+
 let scramble = "";
 let scrambled = "";
 let score = 0;
 let inPlay = false;
+
 button.addEventListener("click", function () {
   if (!inPlay) {
+    // Start the game
     inPlay = true;
     score = 0;
     message.innerHTML = "";
@@ -175,12 +190,17 @@ button.addEventListener("click", function () {
     keyboard.classList.toggle("d-none");
     letter.classList.toggle("d-none");
     title.classList.toggle("d-none");
+
+    // Create a new word for the game
     scramble = createWord();
     scrambled = randomArray(scramble.split(""));
   } else {
+    // User has made a guess
     let tempGuess = guessInput.value;
     score++;
+
     if (guessInput.value === scramble) {
+      // User guessed correctly
       inPlay = false;
       message.innerHTML =
         "تبریک !  با " +
@@ -199,11 +219,14 @@ button.addEventListener("click", function () {
       letter.classList.toggle("d-none");
       title.classList.toggle("d-none");
     } else {
+      // User guessed incorrectly
       message.innerHTML = "دوباره تلاش کن! " + "<i class='	far fa-frown'></i> ";
       guessInput.value = "";
     }
   }
 });
+
+// Function to create a random word from the myArray
 function createWord() {
   let randomIndex = Math.floor(Math.random() * myArray.length);
   let tempWord = myArray[randomIndex];
@@ -211,6 +234,9 @@ function createWord() {
 
   return tempWord;
 }
+
+// Function to randomly rearrange the letters of a word
+
 function randomArray(arr) {
   for (i = arr.length - 1; i > 0; i--) {
     let temp = arr[i];
@@ -222,6 +248,5 @@ function randomArray(arr) {
     letter3.innerHTML = arr[2];
     letter4.innerHTML = arr[3];
   }
-
   return arr;
 }

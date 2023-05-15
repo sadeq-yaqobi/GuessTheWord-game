@@ -2,31 +2,37 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="Css/style.css">
     <link rel="stylesheet" href="Css/media-queries.css">
+
     <title>Guess The word</title>
 </head>
 
 <body>
-    <!-- preloader -->
+    <!-- Preloader -->
     <div class="preloader d-flex justify-content-center align-items-center ">
         <img src="images/preloader03.gif" alt="preLoader">
     </div>
-    <!-- preloader -->
+    <!-- End Preloader -->
 
-    <section class="  container-game py-5">
-        <div class="container cont d-flex  flex-column align-self-center  ">
+    <section class="container-game py-5">
+        <div class="container cont d-flex flex-column align-self-center">
             <header class="d-flex justify-content-end container">
-                <!-- burger menu -->
+                <!-- Burger Menu -->
                 <div>
                     <div id="burger-menu">
                         <span></span>
@@ -41,21 +47,22 @@
                         </ul>
                     </div>
                 </div>
-                <!-- end burger menu -->
-
+                <!-- End Burger Menu -->
             </header>
-            <main class="main d-flex flex-column align-items-center justify-content-center  ">
-                <div class=" title d-flex justify-content-between align-items-baseline text-center my-5 ">
-                    <h1 class="title-letter ">ح</h1>
-                    <h1 class="title-letter ">د</h1>
-                    <h1 class="title-letter ">س</h1>
-                    <h1 class="title-letter ">ک</h1>
-                    <h1 class="title-letter ">ل</h1>
-                    <h1 class="title-letter ">م</h1>
-                    <h1 class="title-letter ">ا</h1>
-                    <h1 class="title-letter ">ت</h1>
+            <main class="main d-flex flex-column align-items-center justify-content-center">
+                <div class="title d-flex justify-content-between align-items-baseline text-center my-5">
+                    <!-- Word Title -->
+                    <h1 class="title-letter">ح</h1>
+                    <h1 class="title-letter">د</h1>
+                    <h1 class="title-letter">س</h1>
+                    <h1 class="title-letter">ک</h1>
+                    <h1 class="title-letter">ل</h1>
+                    <h1 class="title-letter">م</h1>
+                    <h1 class="title-letter">ا</h1>
+                    <h1 class="title-letter">ت</h1>
                 </div>
                 <div class="letter-box text-center mt-3 mb-5 d-none d-flex">
+                    <!-- Letter Box -->
                     <h1 class="letter letter1"></h1>
                     <h1 class="letter letter2"></h1>
                     <h1 class="letter letter3"></h1>
@@ -66,6 +73,7 @@
 
                 <h3 class="message col text-center py-1"></h3>
                 <div class="keyboard mx-auto d-flex flex-column align-items-center d-none">
+                    <!-- start keyboard -->
                     <div class="keyboard-row">
                         <button class="keyboard-btn btn " onclick="typeText('ض')">ض</button>
                         <button class="keyboard-btn btn " onclick="typeText('ص')">ص</button>
@@ -105,15 +113,14 @@
                         <button class="keyboard-btn btn " onclick="typeText('و')">و</button>
                         <button class="keyboard-btn btn  delete-btn" onclick="deleteText()">حذف</button>
                     </div>
-
+                    <!-- End keyboard -->
                 </div>
+                <!-- Start button -->
                 <button class="start-btn btn btn-success btn-lg mt-4 ">شروع</button>
             </main>
         </div>
     </section>
+    <script src="JavaScript/MyJavaScript.js"></script>
 </body>
-<script src="JavaScript/all.js"></script>
-<noscript>Sorry...JavaScript is needed to go ahead.</noscript>
-<script src="JavaScript/MyJavaScript.js"></script>
 
 </html>
