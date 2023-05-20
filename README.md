@@ -2,8 +2,7 @@
 
 This is a simple word guessing game built using HTML, CSS, and JavaScript. The game presents a scrambled word, and the player needs to guess the original word by rearranging the letters.
 
-![preview guess the word image](images/preview-guess-word-01.png)
-![preview guess the word image](images/preview-guess-word-02.png)
+Play the Guess The Word game [here](https://sadeq-yaqobi.github.io/GuessTheWord-game/).
 
 ## Features
 
@@ -35,7 +34,7 @@ To run the project locally, follow these steps:
 - If your guess is correct, a success message will be displayed, and you can start a new game by clicking the "شروع" (Start) button again.
 - If your guess is incorrect, a failure message will be displayed, and you can try again by typing a new guess and clicking the "حدس بزن" (Guess) button.
 
-![preview guess the word image](images/preview-guess-word-03.png)
+
 
 ## Contributing
 
